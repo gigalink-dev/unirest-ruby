@@ -9,10 +9,10 @@
 # distribute, sublicense, and/or sell copies of the Software, and to
 # permit persons to whom the Software is furnished to do so, subject to
 # the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be
 # included in all copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 # EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -20,7 +20,7 @@
 # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-# 
+#
 
 require 'rubygems'
 require 'rest-client'
@@ -29,7 +29,7 @@ require File.join(File.dirname(__FILE__), "/unirest/http_request.rb")
 require File.join(File.dirname(__FILE__), "/unirest/http_response.rb")
 
 module Unirest
-  
+
   @@timeout         = 10
   @@default_headers = {}
   @@user_agent      = "unirest-ruby/1.1"
@@ -51,7 +51,6 @@ module Unirest
     def self.internal_request(http_request, timeout)
       # Set the user agent
       http_request.add_header("user-agent", Unirest.user_agent)
-      http_request.add_header("accept-encoding", "gzip")
 
       http_response = nil
 
@@ -118,5 +117,5 @@ module Unirest
   def self.patch(url, headers: {}, parameters: nil, auth:nil, &callback)
     HttpClient.request(:patch, url, headers.merge(@@default_headers), parameters, auth, @@timeout, &callback)
   end
-  
+
 end

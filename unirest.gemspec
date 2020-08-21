@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'unirest'
-  s.version     = '1.1.2'
+  s.version     = '1.1.3'
   s.summary     = "Unirest-Ruby"
   s.description = "Simplified, lightweight HTTP client library"
   s.authors     = ["Mashape"]
